@@ -181,13 +181,13 @@ def createTicket():
                 activebackground='#c5e1a5') # onPress Green Color
 
                 # Using Lambda Function
-                boxButton.configure(command = lambda boxButton : markNumber(boxButton))
+                boxButton.configure(command = lambda boxButton=boxButton : markNumber(boxButton))
 
                 boxButton.place(x=xPos, y=yPos)
             else:
                 # For windows users
                 boxButton = tk.Button(gameWindow, font = ("Chalkboard SE",30), width=3, height=2,borderwidth=5, bg="#fff176")
-                boxButton.configure(command = lambda boxButton : markNumber(boxButton))
+                boxButton.configure(command = lambda boxButton=boxButton : markNumber(boxButton))
                 boxButton.place(x=xPos, y=yPos)
 
             rowList.append(boxButton)
@@ -232,7 +232,7 @@ def gameWindow():
 
 
     # Flash Number Label
-    flashNumberLabel = canvas2.create_text(400,screen_height/2.3, text = "Waiting for other to join...", font=("Chalkboard SE",30), fill="#3e2723")
+    flashNumberLabel = canvas2.create_text(400,screen_height/1.3, text = "Waiting for other to join...", font=("Chalkboard SE",30), fill="#3e2723")
 
     gameWindow.resizable(True, True)
     gameWindow.mainloop()
